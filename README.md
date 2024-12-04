@@ -89,6 +89,6 @@ Here are the supported models and their use cases:
 Contributions are welcome! Feel free to fork the repository, make improvements, and submit a pull request.
 
 ## License
-This project is licensed under the Apache License.
+This project is licensed under the Apache-2.0 License.
 
 ## Happy Background Removing!
