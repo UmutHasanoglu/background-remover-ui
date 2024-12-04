@@ -53,17 +53,12 @@ streamlit run app.py
 
 ## Using the App:
 
-Select a background removal model from the dropdown.
-Upload one or more images (.jpg, .jpeg, .png).
-Click "Process Images" to remove the background.
-View and compare the results with an interactive slider.
-Download individual processed images or a ZIP file of all results.
-Screenshots
-Main Interface
+-Select a background removal model from the dropdown.
+-Upload one or more images (.jpg, .jpeg, .png).
+-Click "Process Images" to remove the background.
+-View and compare the results with an interactive slider.
+-Download individual processed images or a ZIP file of all results.
 
-Image Comparison
-
-Download Options
 
 ## Models
 Here are the supported models and their use cases:
