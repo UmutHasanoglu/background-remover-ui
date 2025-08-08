@@ -5,6 +5,7 @@ from io import BytesIO
 from PIL import Image
 import zipfile
 import concurrent.futures
+from pathlib import Path
 from streamlit_image_comparison import image_comparison  # Ensure this is installed
 
 # --- Initialize Session State Variables ---
@@ -95,7 +96,7 @@ def process_image(uploaded_file, model_name):
         buffered.seek(0)
         
         return {
-            'name': f"{uploaded_file.name}_no_bg.png",
+            'name': f"{Path(uploaded_file.name).stem}_no_bg.png",
             'original': input_image,
             'processed': Image.open(buffered),
             'data': buffered.getvalue()
