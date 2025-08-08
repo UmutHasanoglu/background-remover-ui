@@ -3,6 +3,7 @@ from rembg import remove
 from rembg.bg import new_session
 from io import BytesIO
 from PIL import Image
+import os
 import zipfile
 import concurrent.futures
 from streamlit_image_comparison import image_comparison  # Ensure this is installed
@@ -94,8 +95,9 @@ def process_image(uploaded_file, model_name):
         output_image.save(buffered, format="PNG")
         buffered.seek(0)
         
+        base_name = os.path.splitext(uploaded_file.name)[0]
         return {
-            'name': f"{uploaded_file.name}_no_bg.png",
+            'name': f"{base_name}_no_bg.png",
             'original': input_image,
             'processed': Image.open(buffered),
             'data': buffered.getvalue()
