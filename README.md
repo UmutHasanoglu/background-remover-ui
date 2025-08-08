@@ -35,8 +35,8 @@ pip install streamlit rembg Pillow streamlit-image-comparison
 1. Clone the Repository:
 
 ```bash
-git clone https://github.com/your-username/background-remover-app.git
-cd background-remover-app
+git clone https://github.com/your-username/background-remover-ui.git
+cd background-remover-ui
 ```
 
 2. Create a virtual environment and activate it

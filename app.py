@@ -81,6 +81,9 @@ if st.button('🧹 Clear All'):
 # --- Function to Process a Single Image ---
 def process_image(uploaded_file, model_name):
     try:
+        # Ensure the file pointer is at the start in case the file was read before
+        uploaded_file.seek(0)
+
         # Open the uploaded image
         input_image = Image.open(uploaded_file).convert("RGBA")
         
@@ -167,7 +170,7 @@ if uploaded_files:
                 mime="image/png"
             )
         
-        # --- Progress Bar for ZIP Creation ---
+        # --- Create ZIP archive for processed images ---
         st.subheader('4. Download All Images as ZIP')
         zip_buffer = BytesIO()
         with zipfile.ZipFile(zip_buffer, "w") as zip_file:
