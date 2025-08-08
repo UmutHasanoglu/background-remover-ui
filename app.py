@@ -2,11 +2,12 @@ import streamlit as st
 from rembg import remove
 from rembg.bg import new_session
 from io import BytesIO
-from pathlib import Path
 from PIL import Image
 import zipfile
 import concurrent.futures
+from pathlib import Path
 from streamlit_image_comparison import image_comparison  # Ensure this is installed
+
 
 # --- Initialize Session State Variables ---
 # Ensure that all necessary session state variables are initialized
