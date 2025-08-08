@@ -6,7 +6,9 @@ from PIL import Image
 import os
 import zipfile
 import concurrent.futures
+from pathlib import Path
 from streamlit_image_comparison import image_comparison  # Ensure this is installed
+
 
 # --- Initialize Session State Variables ---
 # Ensure that all necessary session state variables are initialized
@@ -97,7 +99,6 @@ def process_image(uploaded_file, model_name):
         buffered = BytesIO()
         output_image.save(buffered, format="PNG")
         buffered.seek(0)
-        
         base_name = os.path.splitext(uploaded_file.name)[0]
         return {
             'name': f"{base_name}_no_bg.png",
