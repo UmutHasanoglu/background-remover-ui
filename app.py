@@ -165,7 +165,7 @@ if uploaded_files:
                 mime="image/png"
             )
         
-        # --- Progress Bar for ZIP Creation ---
+        # --- Create ZIP archive for processed images ---
         st.subheader('4. Download All Images as ZIP')
         zip_buffer = BytesIO()
         with zipfile.ZipFile(zip_buffer, "w") as zip_file:
