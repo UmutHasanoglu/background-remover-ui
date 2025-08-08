@@ -2,6 +2,7 @@ import streamlit as st
 from rembg import remove
 from rembg.bg import new_session
 from io import BytesIO
+from pathlib import Path
 from PIL import Image
 import zipfile
 import concurrent.futures
@@ -80,6 +81,9 @@ if st.button('🧹 Clear All'):
 # --- Function to Process a Single Image ---
 def process_image(uploaded_file, model_name):
     try:
+        # Ensure the file pointer is at the start in case the file was read before
+        uploaded_file.seek(0)
+
         # Open the uploaded image
         input_image = Image.open(uploaded_file).convert("RGBA")
         
@@ -95,7 +99,7 @@ def process_image(uploaded_file, model_name):
         buffered.seek(0)
         
         return {
-            'name': f"{uploaded_file.name}_no_bg.png",
+            'name': f"{Path(uploaded_file.name).stem}_no_bg.png",
             'original': input_image,
             'processed': Image.open(buffered),
             'data': buffered.getvalue()
